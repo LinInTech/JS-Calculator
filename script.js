@@ -77,11 +77,11 @@ function appendToDisplay(value){
             display.value = currentValue + value;
         }else{
             //Get the last number in display (after the last operator)
-            let parts = currentValue.split('/[+\-*/');
+            let parts = currentValue.split(/[+\-*/]/);
             let lastNumber = parts[parts.length - 1];
 
             //Only add decimal if number doesn't already have one
-            if(lastNumber.includes('.')){
+            if(!lastNumber.includes('.')){
                 display.value = currentValue + value;
             }
         }
